@@ -10,6 +10,17 @@ The data used in this analysis consists of historical data from previous heptath
 
 An athlete was chosen at random for this project to be used for this predictive modelling. This was Hanna Kasyanova and her performance from the 2008 Beijing Olympics where she placed 13th. Her data was removed from the dataset before analysis as to not create any bias.
 
+Hanna Kasyanova's PRE scores were:
+| Event        | Score |
+|--------------|-------|
+| 100m Hurdles | 1047  |
+| High Jump    | 978   |
+| Shot Put     | 739   |
+| 200m         | 947   |
+| Long Jump    | 975   |
+| Javelin      | 589   |
+| 800m         | 890   |
+
 # Key Features
 
 ### **Performance Modelling:**
@@ -54,4 +65,19 @@ Once all disciplines have been simulated, the total score is calculated by summi
 The results of the simulations offer valuable insights into the athlete’s potential performance, as well as the impact of emphasising specific disciplines. The simulations produce a range of possible total scores, providing a better understanding of performance variability and the likelihood of exceeding certain thresholds.
 
 ### Discipline regression
-![regression line of 800m]()
+---
+![regression line of 800m](Images/800m_example_reg)
+
+The first visualisation created in this script shows the regression line for the 7 different disciplines. Rather than showing all 7 (they all have very similar regression lines) The 800m event graph is being shown. As with the other disciplines, this shows a clear negative regression. This is to be expected, with the nature of elite competition in sport, the better you are the harder it is to improve. Those athletes that had worse PRE scores had an easier time improving upon themselves and therefore had a better DIFF score, with the opposite being true for those who had the higher PRE scores. 
+
+### Simulation point spread frequency
+---
+![histogram of the simulation points for Hanna Kasyanova](Images/sim_points_spread_hist)
+
+The histogram displays the distribution of the total simulated scores for the athlete, based on 100,000 simulations. The frequency of scores are normally distributed, with a peak around 6100, indicating that the most likely total score for the athlete is centred around this value. The spread of scores ranges from approximately 5900 to 6400, reflecting variability introduced by residuals from year-to-year performance changes. This variability is influenced by both the predicted changes and the random noise modelled within each discipline.
+
+The relatively symmetric shape of the histogram suggests that the simulation assumptions, particularly the residuals and quintile-based structure, are well-calibrated and do not introduce significant bias. The width of the distribution provides an estimate of the uncertainty in the athlete's projected performance, highlighting how their total score could vary depending on discipline-specific outcomes. 
+
+### Discipline emphasis average
+---
+![Plot showing the average total points per discipline emphasis](Images/athlete_emph_score)
